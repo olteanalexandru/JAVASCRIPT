@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express = require('express');
 const dotenv = require('dotenv').config();
 const port = process.env.PORT || 5000;
-const { errorHandler } = require('./Middleware/errorMiddleware');
+const { errorHandler } = require('./middleware/errorMiddleware');
 const app = express();
 const connectDB = require('./config/db');
 const cors = require('cors');
