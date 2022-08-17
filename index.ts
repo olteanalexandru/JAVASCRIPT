@@ -16,6 +16,7 @@ app.use(express.urlencoded({extended:false}))
 app.use(cors());
 
 app.use('/api/movies', require('./routes/routes'))
+app.use('/', require('./routes/routes'))
 app.use(errorHandler)
 
 app.listen (port, () => console.log('listening on port ' + port))
