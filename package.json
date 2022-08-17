@@ -16,6 +16,11 @@
     "express-async-handler": "^1.2.0",
     "mongoose": "^6.5.2",
     "moongose": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
   }
-}
+
+  }
+
 
