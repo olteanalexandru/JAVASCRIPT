@@ -1,5 +1,5 @@
 
-let errorHandler = ( err: { message: any; stack: any; }, _req: any, res: {
+let errorhandler = ( err: { message: any; stack: any; }, _req: any, res: {
     statusCode: any; status: (arg0: any) => void; json: (arg0: {
         message: any;
         //additional info if in dev mode
@@ -15,5 +15,5 @@ res.json({
 });
 };
 module.exports = {
-errorHandler
+errorhandler
 };

@@ -1,5 +1,5 @@
 "use strict";
-let errorHandler = (err, _req, res, next) => {
+let errorhandler = (err, _req, res, next) => {
     const statusCode = res.statusCode ? res.statusCode : 500;
     res.status(statusCode);
     res.json({
@@ -9,5 +9,5 @@ let errorHandler = (err, _req, res, next) => {
     });
 };
 module.exports = {
-    errorHandler
+    errorhandler
 };
