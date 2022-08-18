@@ -13,6 +13,6 @@ router.route('/movies').get(getAllMovies)
 router.route('/movies/:id').get(GetSpecific)
 router.route('/:id').put(PutMovie).delete(DeleteMovie)
 
-module.exports = router ; 
+module.exports =router; 
 
 
