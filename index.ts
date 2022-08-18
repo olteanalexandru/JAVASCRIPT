@@ -1,6 +1,6 @@
 const express = require('express')
 const port = process.env.PORT || 5000;
-const { errorhandler } = require('./middleware/errormiddleware')
+const { errorhandler } = require('./middleware/errorMiddleware')
 const app = express()
 const connectDB = require ('./config/db')
 const cors = require('cors');
