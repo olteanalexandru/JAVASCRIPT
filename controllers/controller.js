@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // auto try catch
 const asyncHandler = require('express-async-handler');
 const Movie = require('../models/movie');
+const moment = require('moment');
 let secretKey = 1234;
 //@route GET /api/movies
 //@acces Private
@@ -54,7 +55,7 @@ const SetMovie = asyncHandler(async (req, res) => {
         plot: req.body.plot,
         takings: req.body.takings,
         availableOnDvd: req.body.availableOnDvd,
-        appointment: req.body.appointment,
+        appointment: moment(req.body.appointment, 'DD-MM-YYYY').format('MM-DD-YYYY'),
         name: req.body.name
     });
     res.status(200).json(movie);

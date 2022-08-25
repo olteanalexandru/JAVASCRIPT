@@ -3,30 +3,32 @@ export {};
 // auto try catch
 const asyncHandler = require('express-async-handler')
 const Movie= require('../models/movie');
-
+const moment= require('moment');
 
 let secretKey = 1234;
 
 interface Response {
     status: (arg0: number) => { (): any; new(): any; json: { (arg0: any): void; new(): any } }
 }
+type NewType = {
+    secretKey: number;
+    availableOnDvd: any;
+    takings: number;
+    plot: string;
+    year: number;
+    title: string;
+    genre: string;
+    appointment: Date;
+    name: string;
+    id: string;
+    _id: string;
+};
+
 interface Request {
     secretKey: number;
     movie: any;
     user: { id: number },
-    body: {
-        secretKey: number;
-        availableOnDvd: any;
-        takings: number;
-        plot: string;
-        year: number; 
-        title: string;  
-        genre: string;
-        appointment: Date;
-        name: string;
-           id: string ,
-            _id:string
-        }
+    body: NewType
     params: { id: number; }
 }
 
@@ -75,20 +77,22 @@ if (req.body.secretKey != secretKey){
     
 };
 if (req.body.appointment){
-    if (req.body.appointment < new Date()){
+    if (req.body.appointment < new Date()  ){
         res.status(400)
         throw new Error('Appointment is in the past')
     }
 } 
+
+
 const movie = await Movie.create({ 
     title: req.body.title,
     year: req.body.year,
     plot:req.body.plot,
     takings:req.body.takings,
     availableOnDvd:req.body.availableOnDvd,
-    appointment:req.body.appointment,
+    appointment:moment(req.body.appointment, 'DD-MM-YYYY').format('MM-DD-YYYY'),
     name:req.body.name
-    
+
 
 })
 res.status(200).json(movie)
