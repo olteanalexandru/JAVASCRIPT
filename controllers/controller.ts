@@ -20,11 +20,9 @@ interface Request {
         takings: number;
         plot: string;
         year: number; 
-        title: string; 
-         image: string; 
-         text: string;
-          descriere: string
-          programare: string ,
+        title: string;  
+        genre: string;
+        appointment: Date;
            id: string ,
             _id:string
         }
@@ -82,7 +80,9 @@ const movie = await Movie.create({
     year: req.body.year,
     plot:req.body.plot,
     takings:req.body.takings,
-    availableOnDvd:req.body.availableOnDvd    
+    availableOnDvd:req.body.availableOnDvd,
+    appointment:req.body.appointment 
+
 })
 res.status(200).json(movie)
 })

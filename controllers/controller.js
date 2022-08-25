@@ -47,7 +47,8 @@ const SetMovie = asyncHandler(async (req, res) => {
         year: req.body.year,
         plot: req.body.plot,
         takings: req.body.takings,
-        availableOnDvd: req.body.availableOnDvd
+        availableOnDvd: req.body.availableOnDvd,
+        appointment: req.body.appointment
     });
     res.status(200).json(movie);
 });

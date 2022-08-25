@@ -10,6 +10,7 @@ const movieSchema = new mongoose.Schema({
     plot: { type: String, required: false },
     takings: { type: Number, required: false },
     availableOnDvd: { type: Boolean, required: false },
+    appointment: { type: Date, required: false },
  } ,{  timestamps: true, }
     
 );
@@ -24,6 +25,6 @@ const movieSchema = new mongoose.Schema({
 //export as Movie 
 module.exports = mongoose.model('Movie',movieSchema)
 
-
+ 
 
 
