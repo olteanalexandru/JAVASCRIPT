@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
+const moment = require('moment');
 //create movie schema
 const movieSchema = new mongoose_1.default.Schema({
     title: { type: String, required: true },
@@ -12,7 +13,7 @@ const movieSchema = new mongoose_1.default.Schema({
     plot: { type: String, required: false },
     takings: { type: Number, required: false },
     availableOnDvd: { type: Boolean, required: false },
-    appointment: { type: Date("<YYYY-mm-dd>"), required: false },
+    appointment: { type: moment('DD-MM-YYYY').format('MM-DD-YYYY'), required: false },
     name: { type: String, required: false }
 }, { timestamps: false, });
 //create genre schema

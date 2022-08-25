@@ -1,6 +1,6 @@
 export {};
 import mongoose from "mongoose";
-
+const moment= require('moment');
 
 //create movie schema
 const movieSchema = new mongoose.Schema({
@@ -10,7 +10,7 @@ const movieSchema = new mongoose.Schema({
     plot: { type: String, required: false },
     takings: { type: Number, required: false },
     availableOnDvd: { type: Boolean, required: false },
-    appointment: { type: Date, required: false },
+    appointment: { type: moment('DD-MM-YYYY').format('MM-DD-YYYY'), required: false },
     name : { type: String, required: false }
  } ,{  timestamps: false, }
     
