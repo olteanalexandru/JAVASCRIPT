@@ -1,6 +1,5 @@
 export {};
 import mongoose from "mongoose";
-const moment= require('moment');
 
 //create movie schema
 const movieSchema = new mongoose.Schema({
@@ -27,5 +26,4 @@ const movieSchema = new mongoose.Schema({
 module.exports = mongoose.model('Movie',movieSchema)
 
  
-
 

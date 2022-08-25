@@ -95,7 +95,7 @@ const movie = await Movie.create({
     plot:req.body.plot,
     takings:req.body.takings,
     availableOnDvd:req.body.availableOnDvd,
-    appointment:moment(req.body.appointment, 'DD-MM-YYYY').format('MM-DD-YYYY'),
+    appointment:req.body.appointment,
     name:req.body.name
 
 
