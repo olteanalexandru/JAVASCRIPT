@@ -13,7 +13,7 @@ const movieSchema = new mongoose_1.default.Schema({
     plot: { type: String, required: false },
     takings: { type: Number, required: false },
     availableOnDvd: { type: Boolean, required: false },
-    appointment: { type: moment('DD-MM-YYYY').format('MM-DD-YYYY'), required: false },
+    appointment: { type: String, required: false },
     name: { type: String, required: false }
 }, { timestamps: false, });
 //create genre schema

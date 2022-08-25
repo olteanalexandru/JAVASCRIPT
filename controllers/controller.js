@@ -43,8 +43,10 @@ const SetMovie = asyncHandler(async (req, res) => {
         throw new Error('Missing secretKey ');
     }
     ;
+    var date = new Date();
+    var formattedDate = moment(date).format('YYYYMMDD');
     if (req.body.appointment) {
-        if (req.body.appointment < new Date()) {
+        if (req.body.appointment < formattedDate) {
             res.status(400);
             throw new Error('Appointment is in the past');
         }

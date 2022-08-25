@@ -10,7 +10,7 @@ const movieSchema = new mongoose.Schema({
     plot: { type: String, required: false },
     takings: { type: Number, required: false },
     availableOnDvd: { type: Boolean, required: false },
-    appointment: { type: moment('DD-MM-YYYY').format('MM-DD-YYYY'), required: false },
+    appointment: { type: String, required: false },
     name : { type: String, required: false }
  } ,{  timestamps: false, }
     
