@@ -11,6 +11,7 @@ const movieSchema = new mongoose.Schema({
     takings: { type: Number, required: false },
     availableOnDvd: { type: Boolean, required: false },
     appointment: { type: Date, required: false },
+    name : { type: String, required: false }
  } ,{  timestamps: true, }
     
 );

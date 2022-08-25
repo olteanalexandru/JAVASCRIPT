@@ -42,13 +42,20 @@ const SetMovie = asyncHandler(async (req, res) => {
         throw new Error('Missing secretKey ');
     }
     ;
+    if (req.body.appointment) {
+        if (req.body.appointment < new Date()) {
+            res.status(400);
+            throw new Error('Appointment is in the past');
+        }
+    }
     const movie = await Movie.create({
         title: req.body.title,
         year: req.body.year,
         plot: req.body.plot,
         takings: req.body.takings,
         availableOnDvd: req.body.availableOnDvd,
-        appointment: req.body.appointment
+        appointment: req.body.appointment,
+        name: req.body.name
     });
     res.status(200).json(movie);
 });
