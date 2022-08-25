@@ -12,7 +12,7 @@ const movieSchema = new mongoose.Schema({
     availableOnDvd: { type: Boolean, required: false },
     appointment: { type: Date, required: false },
     name : { type: String, required: false }
- } ,{  timestamps: true, }
+ } ,{  timestamps: false, }
     
 );
 //create genre schema
